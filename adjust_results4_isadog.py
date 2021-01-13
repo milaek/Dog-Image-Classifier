@@ -71,7 +71,9 @@ def adjust_results4_isadog(results_dic, dogfile):
     dog_set = set()
     with open(dogfile) as file:
         for line in file:
-            dog_set.add(line.lower())
+            separator_list = line.split(", ")
+            for name in separator_list:
+                dog_set.add(name.strip("\n"))
 
     for key in results_dic.keys():
         # check if pic label is of dog
@@ -82,7 +84,13 @@ def adjust_results4_isadog(results_dic, dogfile):
             results_dic[key].append(0)
         # check if classifier identified pic as of dog
         # 1 = dog, 0 = not dog
-        if results_dic[key][1] in dog_set:
-            results_dic[key].append(1)
-        else:
-            results_dic[key].append(0)
+        val = 0
+        for name in results_dic[key][1].split(", "):
+            if name in dog_set:
+                val = 1
+                break
+        results_dic[key].append(val)
+
+
+
+

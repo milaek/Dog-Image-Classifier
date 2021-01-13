@@ -63,7 +63,7 @@ def print_results(results_dic, results_stats_dic, model,
            None - simply printing results.
     """    
     # set up standard print of counts and stats
-    print_string = f"Using CNN Model: {model}\n Total Number of Images Processed: {results_stats_dic['n_images']}\n" \
+    print_string = f"Using CNN Model: {model}\nTotal Number of Images Processed: {results_stats_dic['n_images']}\n" \
                    f"Total Number of Dog Images Processed: {results_stats_dic['n_dogs_img']}\n" \
                    f"Total Number of Not-a-Dog Images Processed: {results_stats_dic['n_notdogs_img']}\n" \
                    f"Percent Classified Correctly as Dogs: {results_stats_dic['pct_correct_dogs']}%\n" \
@@ -86,7 +86,7 @@ def print_results(results_dic, results_stats_dic, model,
     if print_incorrect_breed and results_stats_dic['n_correct_breed'] < results_stats_dic['n_dogs_img']:
         print_breed_list = ""
         for key in results_dic.keys():
-            if results_dic[key][2] == 0:
+            if results_dic[key][2] == 0 and results_dic[key][3] == 1:
                 print_breed_list += f"Expected {results_dic[key][0]}, Got {results_dic[key][1]}\n"
 
         print(print_breed_list)
