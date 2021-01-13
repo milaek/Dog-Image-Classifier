@@ -43,7 +43,7 @@ def get_input_args():
                         help='path to the folder of pet images')
 
     # Argument 2:  CNN model name
-    parser.add_argument('--arch', type=str, defailt='vgg', help='type of CNN model architecture to use for processing')
+    parser.add_argument('--arch', type=str, default='vgg', help='type of CNN model architecture to use for processing')
 
     # Argument 3: text file of dog names
     parser.add_argument('--dogfile', type=str, default='dognames.txt', help='file of dog names')
