@@ -6,8 +6,11 @@
 Written as part of the AI Programming with Python Nanodegree Program provided by Udacity.
 
 # Installation
-Please install the following modules for python:
-    - torchvision
+Please either:
+
+	- Install all packages listed in requirements.txt, which can be found in the subfolder environment_needs
+
+	- Use the environment provied, located in the subfolder environment_needs as environment.yaml
 
 # How to use
 ##Pre-Established Photos:
